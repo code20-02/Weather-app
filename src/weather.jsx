@@ -2,12 +2,16 @@ function Weather({ data }){
     if (!data) return <p>Search for a city!</p>;
 
     return (
-    <div>
-        <h2>{data.name}</h2>
-    <p>Temperature: {data.main.temp}°C</p>
-        <p>Condition: {data.weather[0].description}</p>
-    <img src={`https://openweathermap.org/img/w/${data.weather[0].icon}.png`} alt="Weather icon" />
-    </div>
+        <div className="weather">
+            <h2>{data.name}</h2>
+            <p>Temperature: {data.main.temp}°C</p>
+            <p>Condition: {data.weather[0].description}</p>
+            <img
+                className="weather-icon"
+                src={`https://openweathermap.org/img/w/${data.weather[0].icon}.png`}
+                alt="Weather icon"
+            />
+        </div>
     );
 }
 
